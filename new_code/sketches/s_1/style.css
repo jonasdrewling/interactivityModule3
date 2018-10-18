@@ -11,6 +11,8 @@ body {
   padding: 1rem;
   background-color: #f3efb1;
   font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  touch-action: none;
 }
 
 *, *:before, *:after {
@@ -18,7 +20,7 @@ body {
 }
 
 .pointer {
-  background-color: #69d3c4;
+  background-color: red;
   position: absolute;
   width: 15vw;
   height: 15vw;
