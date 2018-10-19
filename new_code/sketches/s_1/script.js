@@ -67,9 +67,11 @@ function onDocumentReady() {
   }
   
   function onPointerMove(e) {
-     pointers.updatePointer(e);  
+     pointers.updatePointer(e); 
+     let b = document.body; 
      let el = getOrCreate(e);
      let hs = pointers.getPointer(e.pointerId).horizontalSpeed;
+     let twoPoint = pointers.numOfPointers;
   
      e.preventDefault();
   
@@ -77,6 +79,11 @@ function onDocumentReady() {
     let rect = el.getBoundingClientRect();
     el.style.left = (e.clientX-rect.width/2) + 'px';
     el.style.top = (e.clientY-rect.height/2) + 'px';
+
+  //  if (twoPoint == 2) {
+  //    el.style.backgroundColor = 'green';
+  //    b.style.backgroundColor = 'purple';
+  //  } 
   }
   
   // Returns an existing element for a pointer id, or makes a new one
