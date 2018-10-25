@@ -23,7 +23,7 @@ function approaching (points) {
      return isApproaching;   
 }*/
 
-/** a pointer class represents data about a pointer and its movements  */
+/* a pointer class represents data about a pointer and its movements  */
 class Pointer {
   constructor(e) {
     this.e = e;
@@ -98,7 +98,9 @@ class Pointer {
   }
 }
 
-//** A pointer grouping represents a set of pointers that belong together and their movements. pointers are grouped together based on proximity. currently if two pointers (e.g two fingers) are closer than 50px they are considered belonging together */
+//** A pointer grouping represents a set of pointers that belong together and their movements. 
+// pointers are grouped together based on proximity. currently if two pointers (e.g two fingers) 
+// are closer than 50px they are considered belonging together */
 
 // number of pixels that define the proximity of two pointers
 const proximity = 100;
@@ -195,7 +197,8 @@ class PointerGrouping {
     }, false);
   }
 
-  /** if any of the pointers in the group moves down the group is moving down. that allows for the group to move both up and down at the same time!  */
+  /** if any of the pointers in the group moves down the group is moving down. 
+  that allows for the group to move both up and down at the same time!  */
   get isMovingUp() {
     return this.pointers.reduce((previous, pointer) => {
       return previous || pointer.isMovingUp;

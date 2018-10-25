@@ -53,7 +53,7 @@ function onDocumentReady() {
 
     let rect = warm1.getBoundingClientRect();
     warm1.style.left = (e.clientX-rect.width/2) + 'px';
-    warm1.style.top = (e.clientY-rect.height/2) + 'px'; 
+    warm1.style.top = (e.clientY-rect.height/2) + 'px';  
   }
 
   function getOrCreate(evt) {
@@ -70,6 +70,21 @@ function onDocumentReady() {
     el.id = id;
     document.body.appendChild(el);
     return el;
+  }
+
+  // ----------CREATE A NEW HOT SPACE----------
+
+  function openWarm() {
+    pointers.updatePointer(e);
+
+    if (pointers.numOfPointers == 2) {
+      let { height, width } = document.body.getBoundingClientRect(); //CALLING THE POINTER IDS
+      let id1 = pointers.pointerIds[0], id2 = pointers.pointerIds[1];
+      let { distance } = pointers.comparePointers(id1, id2);
+
+    if (distanceOnPointerDown > 150) 
+        distanceOnPointerDown = distance
+  }
   }
 
   if (document.readyState != 'loading') onDocumentReady();
